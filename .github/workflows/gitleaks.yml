@@ -13,8 +13,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: gitleaks/gitleaks-action@v2
-
+          
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
@@ -24,7 +23,7 @@ jobs:
         run: go install github.com/zricethezav/gitleaks/v8@latest
 
       - name: Run GitLeaks
-        run: gitleaks -r https://github.com/kishorepamulapati/bpg -q --config-path=/.gitleaks.toml
+        run: gitleaks --config-path= /github/.gitleaks.toml
       
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
