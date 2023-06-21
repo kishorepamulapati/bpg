@@ -12,17 +12,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE}}
-
-  syncSecurityAlerts:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Sync security alerts to Jira issues"
-        uses: reload/github-security-jira@v1.x
-        env:
-          GH_SECURITY_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          JIRA_TOKEN: ${{ secrets.JIRA_TOKEN }}
-          JIRA_HOST: ''
-          JIRA_USER: ''
-          JIRA_PROJECT: CO
-          JIRA_ISSUE_TYPE: Story
-          JIRA_ISSUE_LABELS: Security
