@@ -21,8 +21,8 @@ jobs:
         env:
           GH_SECURITY_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           JIRA_TOKEN: ${{ secrets.JIRA_TOKEN }}
-          JIRA_HOST: 'https://exelixis.atlassian.net/'
-          JIRA_USER: ssubbarao@exelixis.com
+          JIRA_HOST: ''
+          JIRA_USER: ''
           JIRA_PROJECT: CO
           JIRA_ISSUE_TYPE: Story
           JIRA_ISSUE_LABELS: Security
