@@ -24,8 +24,7 @@ jobs:
         run: go install github.com/zricethezav/gitleaks/v8@latest
 
       - name: Run GitLeaks
-        run: gitleaks --config=".github/.gitleaks.toml"
-        
+        run: gitleaks -r https://github.com/kishorepamulapati/bpg -q --config-path= ./github/.gitleaks.toml
       
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
