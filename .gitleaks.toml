@@ -1,13 +1,4 @@
 title = "gitleaks config"
-[[rules]]
-    description = '''ADMIN_PASSWORD'''
-    regex = '''(admin).+(secret|token|key|password).+'''
-    tags = ["secret"]
-
-[[rules]]
-    description = '''AWS API Gateway'''
-    regex = '''[0-9a-z]+.execute-api.[0-9a-z.-_]+.amazonaws.com'''
-    tags = ["secret"]
 
 [[rules]]
     description = '''AWS API Key'''
