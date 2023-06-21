@@ -20,7 +20,10 @@ jobs:
           go-version: 1.16
           
       - name: Install GitLeaks
-        run: sudo apt-get install github.com/zricethezav/gitleaks/v7@latest
+        run: go install github.com/zricethezav/gitleaks/v7@latest
+        
+      - name: check version 
+        run: gitleaks --version
 
       - name: Run GitLeaks
         run: gitleaks --path="./" --config=".github/.gitleaks.toml"
