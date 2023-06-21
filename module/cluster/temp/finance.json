@@ -1,0 +1,15 @@
+[
+  {
+    "name": "hellotom",
+    "image": "tomcat:latest",
+    "cpu": 512,
+    "memory": 1024,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 8081,
+        "hostPort": 8081
+      }
+    ]
+  }
+]
