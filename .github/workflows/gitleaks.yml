@@ -21,9 +21,6 @@ jobs:
           
       - name: Install GitLeaks
         run: go install github.com/zricethezav/gitleaks/v8@latest
-        
-      - name: check version 
-        run: gitleaks --version
 
       - name: Run GitLeaks
         run: gitleaks --path="./" --config=".github/.gitleaks.toml"
