@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  gitleaks:
+  scan:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,3 +24,6 @@ jobs:
 
       - name: Run GitLeaks
         run: gitleaks --config=".github/.gitleaks.toml"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE}}
