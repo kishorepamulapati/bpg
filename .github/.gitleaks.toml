@@ -1,6 +1,6 @@
-title = "gitleaks config"
+
 [[rules]]
-    description = '''ADMIN_PASSWORD'''
+    description = "ADMIN_PASSWORD"
     regex = '''(admin).+(secret|token|key|password).+'''
     tags = ["secret"]
 
