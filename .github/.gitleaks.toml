@@ -4893,8 +4893,3 @@ title = "gitleaks config"
     description = '''user_assets_access_key_id'''
     regex = '''user[_-]?assets[_-]?access[_-]?key[_-]?id(=| =|:| :)'''
     tags = ["secret"]
-
-[[rules]]
-    description = '''virustotal_apikey'''
-    regex = '''virustotal[_-]?apikey(=| =|:| :)'''
-    tags = ["secret"]
