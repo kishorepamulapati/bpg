@@ -2,7 +2,6 @@
 [[rules]]
     description = "ADMIN_PASSWORD"
     regex = '''(admin).+(secret|token|key|password).+'''
-    tags = ["secret"]
 
 [[rules]]
     description = '''AWS API Gateway'''
