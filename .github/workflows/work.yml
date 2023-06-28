@@ -12,7 +12,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
-          GITLEAKS_CONFIG: /bpg/config/gitleaks.toml
+          GITLEAKS_CONFIG: /bpg/config/
   syncSecurityAlerts:
     runs-on: ubuntu-latest
     steps:
