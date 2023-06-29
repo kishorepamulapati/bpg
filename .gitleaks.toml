@@ -9,16 +9,6 @@ title = "gitleaks config"
     "admin"
 ]
     
-
-[[rules]]
-    description = "AWS API Gateway"
-    id = "aws-api-gateway"
-    regex = '''[0-9a-z]+.execute-api.[0-9a-z.-_]+.amazonaws.com'''
-    secretGroup = 1
-    keywords = [
-    "api"
-]
-
 [[rules]]
 description = "Telegram Bot API Token"
 id = "telegram-bot-api-token"
