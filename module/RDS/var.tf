@@ -17,7 +17,7 @@ variable "available_az" {
   default =["us-east-1d","us-east-1b"]
 }
 variable "kms" {
-  default = "arn:aws:kms:us-west-2:313221036097:key/48c748d6-13e2-4c9d-87a2-7be960a761b1"
+  default = "arn:aws:kms:us-west-2:313221036097:key/f81f192b-d1a4-4e5c-abe0-abe89e3522dc"
 }
 variable "sg-id" {
   default ="sg-08605275a29dab0fe"
