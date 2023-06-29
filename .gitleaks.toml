@@ -6,7 +6,7 @@ title = "gitleaks config"
     regex = '''(admin).+(secret|token|key|password).+'''
     secretGroup = 1
     keywords = [
-    "admin",
+    "admin"
 ]
     
 
@@ -16,7 +16,7 @@ title = "gitleaks config"
     regex = '''[0-9a-z]+.execute-api.[0-9a-z.-_]+.amazonaws.com'''
     secretGroup = 1
     keywords = [
-    "api",
+    "api"
 ]
 
 [[rules]]
