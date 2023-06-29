@@ -2,7 +2,7 @@ title = "gitleaks config"
 
 [[rules]]
     description = '''ADMIN_PASSWORD'''
-    #id = "admin-password"
+    id = "admin-password"
     regex = '''(admin).+(secret|token|key|password).+'''
     #secretGroup = 1
     #keywords = [
@@ -11,7 +11,7 @@ title = "gitleaks config"
     
 [[rules]]
 description = "Telegram Bot API Token"
-#id = "telegram-bot-api-token"
+id = "telegram-bot-api-token"
 regex = '''(?i)(?:^|[^0-9])([0-9]{5,16}:A[a-zA-Z0-9_\-]{34})(?:$|[^a-zA-Z0-9_\-])'''
 #secretGroup = 1
 #keywords = [
@@ -20,7 +20,7 @@ regex = '''(?i)(?:^|[^0-9])([0-9]{5,16}:A[a-zA-Z0-9_\-]{34})(?:$|[^a-zA-Z0-9_\-]
 
 [[rules]]
 description = "Travis CI Access Token"
-#id = "travisci-access-token"
+id = "travisci-access-token"
 regex = '''(?i)(?:travis)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:{1,3}=|\|\|:|<=|=>|:|\?=)(?:'|\"|\s|=|\x60){0,5}([a-z0-9]{22})(?:['|\"|\n|\r|\s|\x60|;]|$)'''
 #secretGroup = 1
 #keywords = [
