@@ -1,7 +1,7 @@
 title = "gitleaks config"
 [[rules]]
     description = '''ADMIN_PASSWORD'''
-    id = "admin-password"
+    id = "admin-passwor"
     regex = '''(admin).+(secret|token|key|password).+'''
     tags = ["secret"]
 
