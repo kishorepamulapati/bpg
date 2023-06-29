@@ -3,7 +3,7 @@ name: gitleaks
 on: [push,pull_request]
 
 jobs:
-  gitleaks:
+  scan:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
