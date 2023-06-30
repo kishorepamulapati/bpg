@@ -103,13 +103,13 @@ title = "gitleaks config"
 
 [[rules]]
     description = '''Adobeio - 1'''
-    id = "Adobeio"
+    id = "Adobeio_1"
     regex = '''(?:adobe).{0,40}\b([a-z0-9]{32})\b'''
     tags = ["secret"]
 
 [[rules]]
     description = '''Adobeio - 2'''
-    id = "Adobeio"
+    id = "Adobeio_2"
     regex = '''(?:adobe).{0,40}\b([a-zA-Z0-9.]{12})\b'''
     tags = ["secret"]
 
@@ -127,7 +127,7 @@ title = "gitleaks config"
 
 [[rules]]
     description = '''Aeroworkflow - 1'''
-    id = "Aeroworkflow_2"
+    id = "Aeroworkflow_1"
     regex = '''(?:aeroworkflow).{0,40}\b([0-9]{1,})\b'''
     tags = ["secret"]
 
