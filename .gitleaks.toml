@@ -2245,7 +2245,7 @@ title = "gitleaks config"
 
 [[rules]]
     description = '''GitHub'''
-    id = "_github"
+    id = "github"
     regex = '''[gG][iI][tT][hH][uU][bB].*['|"][0-9a-zA-Z]{35,40}['|"]'''
     tags = ["secret"]
 
@@ -5095,7 +5095,7 @@ title = "gitleaks config"
 
 [[rules]]
     description = '''Unplugg'''
-    id = Unplugg"
+    id = "Unplugg"
     regex = '''(?:unplu).{0,40}\b([a-z0-9]{64})\b'''
     tags = ["secret"]
 
