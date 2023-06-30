@@ -2329,7 +2329,7 @@ title = "gitleaks config"
 
 [[rules]]
     description = '''Gocanvas - 2'''
-    id = _Gocanvas_2 "
+    id = 2 - Gocanvas "
     regex = '''(?:gocanvas).{0,40}\b([\w\.-]+@[\w-]+\.[\w\.-]{2,5})\b'''
     tags = ["secret"]
 
