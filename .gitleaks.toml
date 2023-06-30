@@ -4695,7 +4695,6 @@ title = "gitleaks config"
     description = '''Stytch - 1'''
     id = "Stytch_1"
     regex = '''(?:stytch).{0,40}\b([a-zA-Z0-9-_]{47}=)'''
-    id = "Stytch"
     tags = ["secret"]
 
 [[rules]]
