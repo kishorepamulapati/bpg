@@ -1,20 +1,42 @@
-name: gitleaks
+name: apply
+
 on:
-  pull_request:
   push:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 4 * * *" # run once a day at 4 AM
+    branches:
+      - 'main'
+  release:
+    types: ["published"]
+
+
+
 jobs:
-  scan:
-    name: gitleaks
+  apply:
+    name: apply
     runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE}}
-          #GITLEAKS_CONFIG: .github/.gitleaks.toml
+      - name: checkout
+        uses: actions/checkout@v4
+        
+      - name: terraform plan
+        run: |
+          terraform plan
+        shell: bash
+
+      - name: Approval
+        id: approval
+        run: |
+          echo "Do you approve the deployment? (yes/no)"
+          read approval
+          echo "::set-output name=approval::$approval"
+        shell: bash
+
+      - name: terraform apply
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && steps.approval.outputs.approval == 'yes' }}
+        run: |
+          terraform apply
+        shell: bash
