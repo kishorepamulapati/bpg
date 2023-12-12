@@ -1,11 +1,5 @@
 title = "gitleaks config"
 [[rules]]
-    description = '''ADMIN_PASSWORD'''
-    id = "ADMIN_PASSWORD"
-    regex = '''(admin).+(secret|token|key|password).+'''
-    tags = ["secret"]
-
-[[rules]]
     description = "Discovered a Hugging Face Access token, which could lead to unauthorized access to AI models and sensitive data."
     id = "huggingface-access-token"
     regex = '''(?:^|[\\'"` >=:])(hf_[a-zA-Z]{34})(?:$|[\\'"` <])'''
@@ -24,20 +18,6 @@ title = "gitleaks config"
         "api_org_",
     ]
     tags = ["secret"]
-
-[[rules]]
-    description = '''Unplugg'''
-    id = "Unplugg"
-    regex = '''(?:unplu).{0,40}\b([a-z0-9]{64})\b'''
-    tags = ["secret"]
-
-
-[[rules]]
-    description = "OpenAI API Key"
-    id = "openai-api-key"
-    regex = '''(?i)\b(sk-[a-zA-Z0-9]{20}T3BlbkFJ[a-zA-Z0-9]{20})(?:['|\"|\n|\r|\s|\x60|;]|$)'''
-    secretGroup = 1
-    tags = ["openapi"]
 	
 [allowlist]
 description = "ignore commits"
