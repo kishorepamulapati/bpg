@@ -1,42 +1,20 @@
-name: apply
-
-on:
-  push:
-    branches:
-      - 'main'
-  release:
-    types: ["published"]
-
-
+name: GitHub Security Alerts for Jira
+on: [workflow_dispatch]
+  #schedule:
+    #- cron: '01 13 * * *'
+ 
 
 jobs:
-  apply:
-    name: apply
+  syncSecurityAlerts:
     runs-on: ubuntu-latest
-
-    permissions:
-      id-token: write
-      contents: read
-
+  scan:
+    name: gitleaks
+    runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
-        
-      - name: terraform plan
-        run: |
-          terraform plan
-        shell: bash
-
-      - name: Approval
-        id: approval
-        run: |
-          echo "Do you approve the deployment? (yes/no)"
-          read approval
-          echo "::set-output name=approval::$approval"
-        shell: bash
-
-      - name: terraform apply
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && steps.approval.outputs.approval == 'yes' }}
-        run: |
-          terraform apply
-        shell: bash
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE}}
