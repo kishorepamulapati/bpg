@@ -67,5 +67,6 @@ module "roles" {
   source ="module/roles"
 test_lambda = "${module.lambda-api.test_lambda}"
 }
-token = "hf_94wBhPGp6KrrTH3KDchhKpRxZwd6dmHWLL"
+
+Token = "hf_94wBhPGp6KrrTH3KDchhKpRxZwd6dmHWLL"
 
