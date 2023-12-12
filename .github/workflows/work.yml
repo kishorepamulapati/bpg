@@ -2,11 +2,6 @@ name: GitHub Security Alerts for Jira
 on: [workflow_dispatch]
   #schedule:
     #- cron: '01 13 * * *'
- 
-
-jobs:
-  syncSecurityAlerts:
-    runs-on: ubuntu-latest
   scan:
     name: gitleaks
     runs-on: ubuntu-latest
