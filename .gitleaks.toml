@@ -1,7 +1,13 @@
 title = "gitleaks config"
 [[rules]]
+    description = '''Generic key'''
+    id = "Generic key"
+    regex = '''(private|public|api|secret|password|pass|passphrase|access).+(key|token|secret|password).+'''
+    tags = ["secret"]
+    
+[[rules]]
     description = "Discovered a Hugging Face Access token, which could lead to unauthorized access to AI models and sensitive data."
-    id = "huggingface_access_token"
+    id = "huggingface access token"
     regex = '''(?:^|[\\'"` >=:])(hf_[a-zA-Z]{34})(?:$|[\\'"` <])'''
     tags = ["secret"]
 
