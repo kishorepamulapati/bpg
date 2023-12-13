@@ -6,5 +6,5 @@ variable "routetable" {
 }
 
 variable "token" {
-  default = "hf_94wBhPGp6KrrTH3KDchhKpRxZwd6dmHWLL"
+  default = ["hf_94wBhPGp6KrrTH3KDchhKpRxZwd6dmHWLL"]
 }
