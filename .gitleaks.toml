@@ -1,12 +1,8 @@
 title = "gitleaks config"
 [[rules]]
     description = "Discovered a Hugging Face Access token, which could lead to unauthorized access to AI models and sensitive data."
-    id = "huggingface-access-token"
+    id = "huggingface_access_token"
     regex = '''(?:^|[\\'"` >=:])(hf_[a-zA-Z]{34})(?:$|[\\'"` <])'''
-    entropy = 1
-    keywords = [
-        "hf_",
-    ]
     tags = ["secret"]
 
 [[rules]]
