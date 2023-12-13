@@ -1,34 +1,34 @@
 variable "cluster-name" {
-  type    = "list"
+  type    = list(string)
   default = ["user", "user1", "user2"]
 }
 variable "json" {
-  type = "list"
-  default = ["event","finance","user"]
+  type    = list(string)
+  default = ["event", "finance", "user"]
 }
 variable "lb-port" {
-  type = "list"
-  default = ["8080","8081","8082"]
+  type    = list(string)
+  default = ["8080", "8081", "8082"]
 }
 
 variable "lb-name" {
-  type = "list"
-  default =["hellotom","hellotom","hellotom"]
+  type    = list(string)
+  default = ["hellotom", "hellotom", "hellotom"]
 }
 variable "task" {
-  type = "list"
-  default = ["user-task","fin-task","event-task"]
+  type    = list(string)
+  default = ["user-task", "fin-task", "event-task"]
 }
 variable "cpu" {
-  type = "list"
-  default = ["512","512","512"]
+  type    = list(string)
+  default = ["512", "512", "512"]
 }
 variable "memory" {
-  type = "list"
+  type = list(string)
   default = [
     "1024",
     "1024",
-    "1024"]
+  "1024"]
 }
 
 variable "subnet-id" {
@@ -38,16 +38,16 @@ variable "subnet-id" {
 variable "sg-nlb" {
   default = "sg-faac1c9c"
 }
-variable "vpc-id"{
+variable "vpc-id" {
   default = "vpc-6052e104"
 }
 variable "nlb-m" {
-  type = "list"
-  default = ["8080","8081","8082",]
+  type    = list(string)
+  default = ["8080", "8081", "8082", ]
 }
 variable "nlm-mm" {
-  type = "list"
-  default = ["80","82","83"]
+  type    = list(string)
+  default = ["80", "82", "83"]
 }
 variable "days" {
   default = 7
@@ -66,11 +66,11 @@ variable "password" {
   default = "pvkishore"
 }
 variable "available_az" {
-  type = "list"
-  default =["us-east-1d","us-east-1b"]
+  type    = list(string)
+  default = ["us-east-1d", "us-east-1b"]
 }
 variable "sg-id" {
-  default ="sg-08605275a29dab0fe"
+  default = "sg-08605275a29dab0fe"
 }
 variable "value" {
   default = "192.0.3.233"
@@ -79,7 +79,7 @@ variable "hosted_zone" {
   default = "kishorepvk.tk"
 }
 variable "records" {
-  default = "www.kishorepvk.tk"
+  default = "https://www.kishorepvk.tk"
 }
 variable "bucket" {
   default = "kishorepvk"
@@ -92,6 +92,6 @@ variable "s3-bucket" {
 }
 
 variable "db_subnet" {
-  type = "list"
-  default = ["subnet-79b88452","subnet-48050911"]
+  type    = list(string)
+  default = ["subnet-79b88452", "subnet-48050911"]
 }

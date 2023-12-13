@@ -20,6 +20,12 @@ title = "gitleaks config"
         "api_org_",
     ]
     tags = ["secret"]
+
+[[rules]]
+    description = '''Freshbooks - 2'''
+    id = "Freshbooks-2"
+    regex = '''(?:freshbooks).{0,40}\b(https://www.[0-9A-Za-z_-]{1,}.com)\b'''
+    tags = ["secret"]    
 	
 [allowlist]
 description = "ignore commits"
